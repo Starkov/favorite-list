@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="submit" class="btn btn-default" ng-click="open(currentMovieList)">edit</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="submit" class="btn btn-default" ng-click="saveOrUpdateMovieList(currentMovieList)">save</button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div ng-repeat="movie in movies">
+    <div ng-show="hasImg(movie.poster_path)">
+      <div class="thumbnail">
+        <div class="row">
+          <h3 class="col-xs-offset-1">{{movie.title}}</h3>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <img src="{{remoteApiImg}}/{{movie.poster_path}}?api_key={{key}}" width="150" height="226">
+          </div>
+          <div class="caption col-xs-8">
+            <p>{{movie.overview}}</p>
+            <button type="submit" class="btn btn-default" ng-click="addToList($index)">add to list</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

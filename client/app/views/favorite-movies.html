@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="row">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="query">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit" ng-click="search(query)">Go!</button>
+            </span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="col-xs-4">
+    <h4>Favorite lists</h4>
+    <div class="row">
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <button type="submit" class="btn btn-primary" ng-click="open()">add</button>
+        </div>
+      </div>
+      <!--<button type="submit" class="btn btn-default" ng-click="open()">add</button>-->
+      <!--<button type="submit" class="btn btn-default" ng-click="open(selectedMovieList)">update</button>-->
+    </div>
+
+    <div class="row">
+      <div class="list-group">
+        <div ng-repeat="movieList in movieLists">
+          <!--ui-sref="favorite.movieList({ id:movieList.id })"-->
+          <button class="list-group-item" ng-click="showMoviesOf(movieList)">
+            {{movieList.name}}
+            <span class="badge">{{movieList.movies.length}}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-8 " ui-view>
+
+  </div>
+</div>

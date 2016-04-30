@@ -1,0 +1,7 @@
+# Routes
+GET      /                                 controllers.MovieListController.home
+GET      /app/movieList/movieId-:movieId   controllers.MovieListController.find(movieId: Integer)
+GET      /app/movieList/all                controllers.MovieListController.findAllMovies
+POST     /app/movieList                    controllers.MovieListController.save
+PUT      /app/movieList                    controllers.MovieListController.update
+DELETE   /app/movieList                    controllers.MovieListController.remove
